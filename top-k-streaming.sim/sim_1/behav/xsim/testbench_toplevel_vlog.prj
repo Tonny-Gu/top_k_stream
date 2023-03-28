@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../top-k-streaming.srcs/sources_1/new/nukv_fifogen.v" \
+"../../../../top-k-streaming.srcs/sources_1/new/packet_parser.v" \
+"../../../../top-k-streaming.srcs/sources_1/new/tcp_top_loopback.v" \
+"../../../../top-k-streaming.srcs/sources_1/new/top_k_block.v" \
+"../../../../top-k-streaming.srcs/sources_1/new/top_k_unit.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

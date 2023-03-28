@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../top-k-streaming.srcs/sources_1/new/EventAcceptor.vhd" \
+"../../../../top-k-streaming.srcs/sim_1/new/testbench_toplevel.vhd" \
+
+# Do not sort compile order
+nosort
