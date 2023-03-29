@@ -200,7 +200,7 @@ module tcp_top_loopback #(
  //////////////
  //TOP-k logic starts here; takes input on "toAdder", gives output on "fromAdder"
  /////////////
- wire [32:0] int_data;
+ wire [31+1+1:0] int_data;
  wire int_valid;
  wire int_ready;
  
@@ -224,6 +224,7 @@ top_k_block top_k_block_inst
     .rx_data_TVALID(int_valid),
     .rx_data_TREADY(int_ready),
     .rx_data_TLAST(int_data[32]),
+    .clear(int_data[33]),
     .rx_data_TDATA(int_data[31:0]), //33 bits with tlast encrypted
     .tx_data_TVALID(fromAdderValid),
     .tx_data_TREADY(1'b1),

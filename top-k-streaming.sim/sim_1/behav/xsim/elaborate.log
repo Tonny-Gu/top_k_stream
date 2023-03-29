@@ -6,35 +6,6 @@ Starting static elaboration
 Pass Through NonSizing Optimizer
 WARNING: [VRFC 10-2065] size mismatch between entity and component port [/home/yangz0e/Desktop/top-k-streaming/top-k-streaming.srcs/sim_1/new/testbench_toplevel.vhd:70]
 WARNING: [VRFC 10-2065] size mismatch between entity and component port [/home/yangz0e/Desktop/top-k-streaming/top-k-streaming.srcs/sim_1/new/testbench_toplevel.vhd:70]
-WARNING: [VRFC 10-3091] actual bit length 513 differs from formal bit length 512 for port 'tx_data_TDATA' [/home/yangz0e/Desktop/top-k-streaming/top-k-streaming.srcs/sources_1/new/tcp_top_loopback.v:230]
+WARNING: [VRFC 10-3091] actual bit length 513 differs from formal bit length 512 for port 'tx_data_TDATA' [/home/yangz0e/Desktop/top-k-streaming/top-k-streaming.srcs/sources_1/new/tcp_top_loopback.v:231]
 Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "/home/yangz0e/Desktop/top-k-streaming/top-k-streaming.srcs/sources_1/new/nukv_fifogen.v" Line 19. Module nukv_fifogen(DATA_SIZE=513) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/yangz0e/Desktop/top-k-streaming/top-k-streaming.srcs/sources_1/new/nukv_fifogen.v" Line 19. Module nukv_fifogen(DATA_SIZE=33) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/yangz0e/Desktop/top-k-streaming/top-k-streaming.srcs/sources_1/new/nukv_fifogen.v" Line 19. Module nukv_fifogen(ADDR_BITS=6,DATA_SIZE=64) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/yangz0e/Desktop/top-k-streaming/top-k-streaming.srcs/sources_1/new/nukv_fifogen.v" Line 19. Module nukv_fifogen(ADDR_BITS=6,DATA_SIZE=577) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/yangz0e/Desktop/top-k-streaming/top-k-streaming.srcs/sources_1/new/nukv_fifogen.v" Line 19. Module nukv_fifogen(ADDR_BITS=6,DATA_SIZE=577) doesn't have a timescale but at least one module in design has a timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling package std.standard
-Compiling package std.textio
-Compiling package ieee.std_logic_1164
-Compiling package ieee.numeric_std
-Compiling package ieee.std_logic_arith
-Compiling package ieee.std_logic_unsigned
-Compiling package ieee.std_logic_textio
-Compiling package vl.vl_types
-Compiling module xil_defaultlib.glbl
-Compiling module unisims_ver.FIFO36E2(CLOCK_DOMAINS="COMMON",...
-Compiling module xil_defaultlib.nukv_fifogen(DATA_SIZE=513)
-Compiling module xil_defaultlib.nukv_fifogen(DATA_SIZE=33)
-Compiling module xil_defaultlib.packet_parser
-Compiling module xil_defaultlib.top_k_unit
-Compiling module xil_defaultlib.top_k_block_default
-Compiling architecture beh of entity xil_defaultlib.event_acceptor [event_acceptor_default]
-Compiling module unisims_ver.FIFO36E2(CLOCK_DOMAINS="COMMON",...
-Compiling module xil_defaultlib.nukv_fifogen(ADDR_BITS=6,DATA_SI...
-Compiling module xil_defaultlib.nukv_fifogen(ADDR_BITS=6,DATA_SI...
-Compiling module xil_defaultlib.tcp_top_loopback(IS_SIM=1)
-Compiling architecture bench of entity xil_defaultlib.testbench_toplevel
-Built simulation snapshot testbench_toplevel_behav
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel

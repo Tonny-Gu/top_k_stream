@@ -2,12 +2,12 @@
 # Webtalk v2021.1.1 (64-bit)
 # SW Build 3286242 on Wed Jul 28 13:09:46 MDT 2021
 # IP Build 3279568 on Wed Jul 28 16:48:48 MDT 2021
-# Start of session at: Tue Mar 28 10:38:02 2023
-# Process ID: 133933
+# Start of session at: Wed Mar 29 10:39:48 2023
+# Process ID: 696868
 # Current directory: /home/yangz0e/Desktop/top-k-streaming/top-k-streaming.sim/sim_1/behav/xsim
 # Command line: wbtcv -mode batch -source /home/yangz0e/Desktop/top-k-streaming/top-k-streaming.sim/sim_1/behav/xsim/xsim.dir/testbench_toplevel_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: /home/yangz0e/Desktop/top-k-streaming/top-k-streaming.sim/sim_1/behav/xsim/webtalk.log
 # Journal file: /home/yangz0e/Desktop/top-k-streaming/top-k-streaming.sim/sim_1/behav/xsim/webtalk.jou
 #-----------------------------------------------------------
 source /home/yangz0e/Desktop/top-k-streaming/top-k-streaming.sim/sim_1/behav/xsim/xsim.dir/testbench_toplevel_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Tue Mar 28 10:38:02 2023...
+INFO: [Common 17-206] Exiting Webtalk at Wed Mar 29 10:39:48 2023...
