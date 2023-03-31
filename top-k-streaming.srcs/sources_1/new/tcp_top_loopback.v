@@ -348,7 +348,7 @@ nukv_fifogen #(
   //assign m_axis_tx_data_TDATA = m_axis_tx_data_COMBINED[511:0];
   assign m_axis_tx_data_TDATA = finalOutData_out[511+64:64];
   assign m_axis_tx_data_TVALID = finalOutValid_out;
-  assign m_axis_tx_data_TLAST = finalOutData_out[512+64];
+  assign m_axis_tx_data_TLAST = finalOutValid_out;
   //assign m_axis_tx_data_TLAST=finalOutValid_out;
   ////////////handshake logic start////////////////////////////////
   ///////Send meta data first wait for reply of status/////////////
