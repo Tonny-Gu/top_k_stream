@@ -54,11 +54,13 @@ module top_k_block #(
     //result port
     wire [INTEGER_SIZE - 1: 0] result_TDATA [TOP_K_NUM: 0];
     wire [TOP_K_NUM: 0] result_TVALID;
-    wire tx_data_TVALID_wire; //for valid signal
     reg [INTEGER_SIZE - 1: 0] result_TDATA_reg [TOP_K_NUM: 0];
     
     
- 
+    //FIFO port
+    wire  [INTEGER_SIZE - 1: 0] FIFO_out_TDATA [TOP_K_NUM: 0];
+    wire  [TOP_K_NUM: 0] FIFO_out_TVALID;
+    reg [2: 0] FIFO_tx_TREADY;
     
     
     //top-k block components
@@ -103,12 +105,36 @@ module top_k_block #(
                 result_TDATA_reg[i_result] = result_TDATA[i_result];
             end
           end
+          
+       
+       //Send data to FIFO 
+        nukv_fifogen #(
+                .DATA_SIZE(32), //with TLAST encrypted in TDATA, clear signal
+                .ADDR_BITS(5)
+            ) fifo_inst (
+                    .clk(clk),
+                    .rst(0),
+                    .s_axis_tvalid(block_TVALID[i_result] && block_TLAST[i_result]),
+                    .s_axis_tready(),
+                    .s_axis_tdata(result_TDATA_reg[i_result]),  
+                    .m_axis_tvalid(FIFO_out_TVALID[i_result]),
+                    .m_axis_tready(FIFO_tx_TREADY[2]),
+                    .m_axis_tdata(FIFO_out_TDATA[i_result])
+                    ); 	
         end
-    endgenerate   
-     
+     endgenerate   
+    
+      always @(posedge clk) begin
+            FIFO_tx_TREADY[2] <= FIFO_tx_TREADY[1];
+            FIFO_tx_TREADY[1] <= FIFO_tx_TREADY[0];
+            FIFO_tx_TREADY[0] <= block_TVALID[TOP_K_NUM] && block_TLAST[TOP_K_NUM];
+      end
+    
+    
      //output
-     assign tx_data_TDATA = {406'b 0, result_TDATA_reg[2], result_TDATA_reg[1], result_TDATA_reg[0]};
-     assign tx_data_TVALID = block_TLAST[TOP_K_NUM] & block_TVALID[TOP_K_NUM];
+     
+     assign tx_data_TDATA = {406'b 0, FIFO_out_TDATA[2], FIFO_out_TDATA[1], FIFO_out_TDATA[0]};
+     assign tx_data_TVALID = FIFO_out_TVALID[TOP_K_NUM] && FIFO_tx_TREADY[2]&&FIFO_out_TVALID[0];
      assign rx_data_TREADY = block_TREADY[TOP_K_NUM];
 
 endmodule
